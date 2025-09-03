@@ -2,7 +2,7 @@
 import mainPhoto3 from "../assets/images/hero3.svg";
 import { themeColor } from "../data/items";
 
-const heroHeading = "Ayudamos a profesores y transformamos la educación";
+const heroHeading = "Automatiza tus clases , transforma la educación";
 const buttonSeeFeature = "Ver Características";
 const buttonPricing = "Precio";
 </script>

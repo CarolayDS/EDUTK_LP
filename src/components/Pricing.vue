@@ -9,13 +9,17 @@ const packages = [
     price: "0",
   },
   {
-    name: "PREMIUM",
-    price: "1.99",
+    name: "BÁSICO",
+    price: "9",
+  },
+  {
+    name: "PREMIUN",
+    price: "19",
   },
   {
     name: "CORPORATIVO",
-    price: "0.99",
-  },
+    price: "499 - 2000",
+  }
 ];
 </script>
 <template>
@@ -28,21 +32,22 @@ const packages = [
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-lg-35">
           <div class="row">
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
               <div class="pricing">
                 <div class="body">
                   <div class="price">
                     <span class="d-block plan">{{ packages[0].name }}</span>
                     <span class="price" :style="[{ color: themeColor }]"
-                      ><sup>$</sup><span>{{ packages[0].price }}</span></span
+                      ><sup>S/.</sup><span>{{ packages[0].price }}</span></span
                     >
                   </div>
                   <ul class="list-unstyled ul-check primary mb-5">
-                    <li>Creación de exámenes (limitado a 2 opciones).</li>
-                    <li>Sin acceso a informes de resultados.</li>
-                    <li>Soporte limitado a una interacción diaria con la IA.</li>
+                    <li>Creación de examen.</li>
+                    <li>Herramientas de IA para la preparación de clases.</li>
+                    <li>Webinar gratuito sobre la utilización de la IA.</li>
+                    <li>Corrección automatizada de exámenes para un aula de hasta 40 alumnos.</li>
                   </ul>
                   <p class="text-center mb-0">
                     <a
@@ -58,19 +63,19 @@ const packages = [
                 </div>
               </div>
             </div>
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
               <div class="pricing active">
                 <div class="body">
                   <div class="price">
                     <span class="d-block plan">{{ packages[1].name }}</span>
                     <span class="price" :style="[{ color: themeColor }]"
-                      ><sup>$</sup><span>{{ packages[1].price }}</span></span
+                      ><sup>S/.</sup><span>{{ packages[1].price }}</span></span
                     >
                   </div>
                   <ul class="list-unstyled ul-check primary mb-5">
-                    <li>Creación ilimitada de exámenes y preguntas personalizadas.</li>
+                    <li>Creación ilimitada de exámenes.</li>
                     <li>Comunidad docente para compartir y colaborar.</li>
-                    <li>Soporte ilimitado para la corrección de exámenes y generación de nuevos.</li>
+                    <li>Hasta 3 aulas con corrección automatizada de exámenes </li>
                   </ul>
                   <p class="text-center mb-0">
                     <a
@@ -86,19 +91,47 @@ const packages = [
                 </div>
               </div>
             </div>
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
               <div class="pricing">
                 <div class="body">
                   <div class="price">
                     <span class="d-block plan">{{ packages[2].name }}</span>
                     <span class="price" :style="[{ color: themeColor }]"
-                      ><sup>$</sup><span>{{ packages[2].price }}</span></span
+                      ><sup>S/.</sup><span>{{ packages[2].price }}</span></span
                     >
                   </div>
                   <ul class="list-unstyled ul-check primary mb-5">
-                    <li>Acceso a informes detallados y completos.</li>
-                    <li>Dashboard descargable.</li>
-                    <li>Soporte ilimitado, incluido acceso a una línea directa para problemas técnicos.</li>
+                    <li>Creación ilimitada de exámenes.</li>
+                    <li>Corrección automatizada de exámenes ilimitados.</li>
+                    <li>Soporte técnico ilimitado.</li>
+                  </ul>
+                  <p class="text-center mb-0">
+                    <a
+                      href="https://edutk.vercel.app/"
+                      class="btn btn-outline-primary"
+                      :style="[
+                        { color: themeColor },
+                        { borderColor: themeColor },
+                      ]"
+                      >{{ startButtonName }}</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 " data-aos="fade-up" data-aos-delay="300">
+              <div class="pricing">
+                <div class="body">
+                  <div class="price">
+                    <span class="d-block plan">{{ packages[3].name }}</span>
+                    <span class="price" :style="[{ color: themeColor }, { fontSize: '1.70rem' }]"
+                      ><sup>S/.</sup><span>{{ packages[3].price }}</span></span
+                    >
+                  </div>
+                  <ul class="list-unstyled ul-check primary mb-5">
+                    <li>Creación ilimitada de exámenes.</li>
+                    <li>Corrección automatizada de exámenes para toda la planilla según.</li>
+                    <li>Soporte técnico ilimitado.</li>
                   </ul>
                   <p class="text-center mb-0">
                     <a

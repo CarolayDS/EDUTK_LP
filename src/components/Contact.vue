@@ -7,7 +7,7 @@ const contactInfoHeading = "Información de Contacto";
 const contactInfo = {
   address: "Lima - Perú",
   phone: "953975396",
-  email: "EDUTEKPERU@gmail.com",
+  email: "edutek.comunicaciones@gmail.com",
   socials: {
     facebook: "#",
     youtube: "#",
@@ -17,7 +17,7 @@ const contactInfo = {
 </script>
 
 <template>
-  <div id="contact-section" class="contact-section" style="background: linear-gradient(to bottom, #ffffff 0%, #d9f1ff 40%, #ffffff 100%);">
+  <div id="contact-section" class="contact-section" >
     <div class="container">
       
       <!-- Encabezado -->
@@ -45,15 +45,20 @@ const contactInfo = {
 
           <!-- Redes sociales -->
           <div class="social-icons mt-4">
+
+           <!--
             <a :href="contactInfo.socials.facebook" target="_blank" class="icon facebook">
               <i class="bi bi-facebook"></i>
             </a>
             <a :href="contactInfo.socials.youtube" target="_blank" class="icon youtube">
               <i class="bi bi-youtube"></i>
+
+              style="background: linear-gradient(to bottom, #ffffff 0%, #d9f1ff 40%, #ffffff 100%);"
             </a>
             <a :href="contactInfo.socials.instagram" target="_blank" class="icon instagram">
               <i class="bi bi-instagram"></i>
             </a>
+            --> 
           </div>
 
         
