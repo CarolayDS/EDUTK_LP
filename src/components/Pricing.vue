@@ -1,155 +1,195 @@
 <script setup>
-import { themeColor } from "../data/items";
-const heading = "PRECIOS";
-const subHeading = "Precios para todos. Elige tu plan ahora!";
-const startButtonName = "Comienza";
-const packages = [
+import { vReveal } from "../directives/reveal";
+
+const heading = "Precios";
+const subHeading = "Precios para todos. ¡Elige tu plan ahora!";
+const startButtonName = "Comenzar";
+const startUrl = "https://edutk.vercel.app/";
+
+const plans = [
   {
-    name: "FREEMIUM",
+    name: "Freemium",
     price: "0",
+    features: [
+      "Creación de examen.",
+      "Herramientas de IA para la preparación de clases.",
+      "Webinar gratuito sobre la utilización de la IA.",
+      "Corrección automatizada de exámenes para un aula de hasta 40 alumnos.",
+    ],
   },
   {
-    name: "BÁSICO",
+    name: "Básico",
     price: "9",
+    featured: true,
+    features: [
+      "Creación ilimitada de exámenes.",
+      "Comunidad docente para compartir y colaborar.",
+      "Hasta 3 aulas con corrección automatizada de exámenes.",
+    ],
   },
   {
-    name: "PREMIUN",
+    name: "Premium",
     price: "19",
+    features: [
+      "Creación ilimitada de exámenes.",
+      "Corrección automatizada ilimitada de exámenes.",
+      "Soporte técnico ilimitado.",
+    ],
   },
   {
-    name: "CORPORATIVO",
+    name: "Corporativo",
     price: "499 - 2000",
-  }
+    range: true,
+    features: [
+      "Creación ilimitada de exámenes.",
+      "Corrección automatizada de exámenes para toda la planilla docente.",
+      "Soporte técnico ilimitado.",
+    ],
+  },
 ];
 </script>
+
 <template>
-  <div class="untree_co-section"  id="pricing-section">
-    <div class="container">
-      <div class="row pricing-title">
-        <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="0">
-          <h2 class="heading">{{ heading }}</h2>
-          <p>{{ subHeading }}</p>
-        </div>
+  <section class="et-section" id="pricing-section">
+    <div class="et-container">
+      <div class="et-head" v-reveal>
+        <h2 class="et-title">{{ heading }}</h2>
+        <p class="et-lead">{{ subHeading }}</p>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-35">
-          <div class="row">
-            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-              <div class="pricing">
-                <div class="body">
-                  <div class="price">
-                    <span class="d-block plan">{{ packages[0].name }}</span>
-                    <span class="price" :style="[{ color: themeColor }]"
-                      ><sup>S/.</sup><span>{{ packages[0].price }}</span></span
-                    >
-                  </div>
-                  <ul class="list-unstyled ul-check primary mb-5">
-                    <li>Creación de examen.</li>
-                    <li>Herramientas de IA para la preparación de clases.</li>
-                    <li>Webinar gratuito sobre la utilización de la IA.</li>
-                    <li>Corrección automatizada de exámenes para un aula de hasta 40 alumnos.</li>
-                  </ul>
-                  <p class="text-center mb-0">
-                    <a
-                      href="https://edutk.vercel.app/"
-                      class="btn btn-outline-primary"
-                      :style="[
-                        { color: themeColor },
-                        { borderColor: themeColor },
-                      ]"
-                      >{{ startButtonName }}</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="pricing active">
-                <div class="body">
-                  <div class="price">
-                    <span class="d-block plan">{{ packages[1].name }}</span>
-                    <span class="price" :style="[{ color: themeColor }]"
-                      ><sup>S/.</sup><span>{{ packages[1].price }}</span></span
-                    >
-                  </div>
-                  <ul class="list-unstyled ul-check primary mb-5">
-                    <li>Creación ilimitada de exámenes.</li>
-                    <li>Comunidad docente para compartir y colaborar.</li>
-                    <li>Hasta 3 aulas con corrección automatizada de exámenes </li>
-                  </ul>
-                  <p class="text-center mb-0">
-                    <a
-                      href="https://edutk.vercel.app/"
-                      class="btn btn-primary"
-                      :style="[
-                        { backgroundColor: themeColor },
-                        { borderColor: themeColor },
-                      ]"
-                      >{{ startButtonName }}</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <div class="pricing">
-                <div class="body">
-                  <div class="price">
-                    <span class="d-block plan">{{ packages[2].name }}</span>
-                    <span class="price" :style="[{ color: themeColor }]"
-                      ><sup>S/.</sup><span>{{ packages[2].price }}</span></span
-                    >
-                  </div>
-                  <ul class="list-unstyled ul-check primary mb-5">
-                    <li>Creación ilimitada de exámenes.</li>
-                    <li>Corrección automatizada de exámenes ilimitados.</li>
-                    <li>Soporte técnico ilimitado.</li>
-                  </ul>
-                  <p class="text-center mb-0">
-                    <a
-                      href="https://edutk.vercel.app/"
-                      class="btn btn-outline-primary"
-                      :style="[
-                        { color: themeColor },
-                        { borderColor: themeColor },
-                      ]"
-                      >{{ startButtonName }}</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 " data-aos="fade-up" data-aos-delay="300">
-              <div class="pricing">
-                <div class="body">
-                  <div class="price">
-                    <span class="d-block plan">{{ packages[3].name }}</span>
-                    <span class="price" :style="[{ color: themeColor }, { fontSize: '1.70rem' }]"
-                      ><sup>S/.</sup><span>{{ packages[3].price }}</span></span
-                    >
-                  </div>
-                  <ul class="list-unstyled ul-check primary mb-5">
-                    <li>Creación ilimitada de exámenes.</li>
-                    <li>Corrección automatizada de exámenes para toda la planilla según.</li>
-                    <li>Soporte técnico ilimitado.</li>
-                  </ul>
-                  <p class="text-center mb-0">
-                    <a
-                      href="https://edutk.vercel.app/"
-                      class="btn btn-outline-primary"
-                      :style="[
-                        { color: themeColor },
-                        { borderColor: themeColor },
-                      ]"
-                      >{{ startButtonName }}</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <ul class="plans">
+        <li v-for="(plan, i) in plans" :key="plan.name" class="plans__cell" v-reveal="i * 80">
+          <article class="plan" :class="{ 'plan--featured': plan.featured }">
+            <span v-if="plan.featured" class="plan__badge">Recomendado</span>
+            <h3 class="plan__name">{{ plan.name }}</h3>
+            <p class="plan__price" :class="{ 'plan__price--range': plan.range }">
+              <span class="plan__cur">S/</span><span class="plan__num">{{ plan.price }}</span>
+            </p>
+            <ul class="et-checks plan__list" :class="{ 'et-checks--dark': plan.featured }">
+              <li v-for="f in plan.features" :key="f">{{ f }}</li>
+            </ul>
+            <a
+              :href="startUrl"
+              class="et-btn et-btn--block"
+              :class="plan.featured ? 'et-btn--coral' : 'et-btn--outline'"
+              >{{ startButtonName }}</a
+            >
+          </article>
+        </li>
+      </ul>
     </div>
-  </div>
+  </section>
 </template>
+
+<style scoped>
+.plans {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.plans__cell {
+  display: flex;
+}
+
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 32px 26px 28px;
+  background: #fff;
+  border: 1.5px solid var(--et-line);
+  border-radius: 26px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.plan:hover {
+  border-color: var(--et-blue-400);
+  box-shadow: var(--et-shadow-md);
+  transform: translateY(-4px);
+}
+.plan--featured {
+  background: var(--et-navy-800);
+  border-color: var(--et-navy-800);
+  color: #fff;
+  box-shadow: var(--et-shadow-lg);
+}
+.plan--featured:hover {
+  border-color: var(--et-blue-400);
+}
+
+.plan__badge {
+  position: absolute;
+  top: -14px;
+  left: 26px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--et-coral-600);
+  font-family: var(--et-font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: #fff;
+}
+.plan__name {
+  margin: 0 0 10px;
+  font-family: var(--et-font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--et-blue-600);
+}
+.plan--featured .plan__name {
+  color: var(--et-blue-400);
+}
+.plan__price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0 0 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--et-line);
+  font-family: var(--et-font-display);
+  font-weight: 700;
+  color: var(--et-navy-800);
+}
+.plan--featured .plan__price {
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+.plan__cur {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--et-muted);
+}
+.plan--featured .plan__cur {
+  color: var(--et-blue-200);
+}
+.plan__num {
+  font-size: 2.9rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.plan__price--range .plan__num {
+  font-size: 1.95rem;
+}
+.plan__list {
+  flex: 1;
+  margin-bottom: 28px;
+  font-size: 0.97rem;
+}
+.plan--featured .plan__list {
+  color: var(--et-blue-100);
+}
+
+@media (min-width: 640px) {
+  .plans {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1100px) {
+  .plans {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+</style>

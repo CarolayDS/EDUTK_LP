@@ -1,81 +1,90 @@
 <script setup>
-import { themeColor } from "../data/items";
 import mainPhoto1 from "../assets/images/info_edutk.png";
+import { vReveal } from "../directives/reveal";
 
-const heading = "Nosotros";
-const subHeading = "¿Quiénes Somos?";
+const heading = "¿Quiénes somos?";
 </script>
 
 <template>
-  <div class="untree_co-section" id="about-section">
-    <div class="container">
-      <div class="row justify-content-between align-items-center">
-        
-        <!-- Imagen -->
-        <div class="col-12 col-lg-8 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-          <img 
-            :src="mainPhoto1" 
-            alt="Nosotros EDUTK" 
-            class="img-fluid mx-auto d-block" 
-            style="max-width: 100%; height: auto; border-radius: 12px;"
-          />
-        </div>
+  <section class="et-section" id="about-section">
+    <div class="et-container about">
+      <div class="about__media" v-reveal>
+        <img :src="mainPhoto1" alt="Equipo y plataforma EduTek" class="about__img" loading="lazy" />
+      </div>
 
-        <!-- Texto -->
-        <div class="col-12 col-lg-4">
-          <div class="mb-4" data-aos="fade-up" data-aos-delay="0">
-            <span class="caption" :style="{ color: themeColor }">{{ heading }}</span>
-            <h2 class="heading">{{ subHeading }}</h2>
-          </div>
-          <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
-            <p>
-              Somos EDUTK, un equipo de jóvenes innovadores comprometidos con transformar la educación en el Perú a través de la tecnología. Creemos que los docentes son el motor de la enseñanza y que, liberándolos de tareas repetitivas, pueden enfocarse en lo más importante: conectar con sus estudiantes y brindar una educación de calidad. 
-            </p>
-            <p>
-              Nuestro propósito es ofrecer
-              <span class="highlight">herramientas que automaticen procesos, reduzcan la carga laboral y abran nuevas oportunidades educativas</span>, generando un impacto positivo en docentes y estudiantes.
-            </p>
-          </div>
-          <ul class="list-unstyled ul-check primary mb-4" data-aos="fade-up" data-aos-delay="200">
-            <li>Automatización en la corrección de exámenes para docentes</li>
-            <li>Generación de exámenes personalizados</li>
-          </ul>
-        </div>
+      <div class="about__copy" v-reveal="120">
+        <h2 class="et-title">{{ heading }}</h2>
+        <p class="about__p">
+          Somos EduTek, un equipo de jóvenes innovadores comprometidos con transformar la educación en el Perú a
+          través de la tecnología. Creemos que los docentes son el motor de la enseñanza y que, liberándolos de
+          tareas repetitivas, pueden enfocarse en lo más importante: conectar con sus estudiantes y brindar una
+          educación de calidad.
+        </p>
+        <p class="about__p">
+          Nuestro propósito es ofrecer
+          <strong class="about__em"
+            >herramientas que automaticen procesos, reduzcan la carga laboral y abran nuevas oportunidades
+            educativas</strong
+          >, generando un impacto positivo en docentes y estudiantes.
+        </p>
+        <ul class="et-checks about__list">
+          <li>Automatización en la corrección de exámenes para docentes</li>
+          <li>Generación de exámenes personalizados</li>
+        </ul>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
-.heading {
-  color: #407BFF;
-  font-weight: bold;
-  font-size: 1.8rem;
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(36px, 6vw, 72px);
+  align-items: center;
 }
 
-/* Texto destacado */
-.highlight {
-  color: #407BFF;
+.about__media {
+  position: relative;
+  isolation: isolate;
+}
+/* bloque de color detrás de la imagen */
+.about__media::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 22px;
+  left: -14px;
+  right: 14px;
+  bottom: -22px;
+  border-radius: 28px;
+  background: var(--et-blue-100);
+}
+.about__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: var(--et-shadow-md);
+}
+
+.about__p {
+  margin: 0 0 18px;
+  color: var(--et-muted);
+}
+.about__em {
+  font-weight: 700;
+  color: var(--et-navy-800);
+}
+.about__list {
+  margin-top: 26px;
+  color: var(--et-ink);
   font-weight: 600;
 }
 
-/* Lista con check */
-.ul-check li::before {
-  content: "✔";
-  color: #407BFF;
-  margin-right: 8px;
-}
-
-/* Ajustes para móviles */
-@media (max-width: 768px) {
-  .heading {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 0.95rem;
-  }
-  .ul-check li {
-    font-size: 0.95rem;
+@media (min-width: 900px) {
+  .about {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   }
 }
 </style>

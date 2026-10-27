@@ -1,0 +1,281 @@
+/* ==========================================================================
+   EduTek · Sistema de diseño
+   Colores tomados del logo: azul marino, azul periwinkle ("Tek"), coral (check)
+   Importar UNA vez en main.js, después de Bootstrap / estilos antiguos.
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap");
+
+:root {
+  color-scheme: light;
+
+  --et-navy-950: #0a1033;
+  --et-navy-900: #0e1745;
+  --et-navy-800: #141f5a; /* fondo del logo */
+  --et-navy-700: #1d2c7a;
+
+  --et-blue-600: #3d5bd6; /* enlaces y acentos sobre fondo claro */
+  --et-blue-500: #5b7deb;
+  --et-blue-400: #7f9cf5; /* "Tek" */
+  --et-blue-200: #c9d5fb;
+  --et-blue-100: #e3e9fe;
+  --et-blue-50: #f3f6ff;
+
+  --et-coral-500: #ee5a45; /* check del logo */
+  --et-coral-600: #d93d28; /* botones (contraste AA con texto blanco) */
+  --et-coral-700: #bf3220;
+
+  --et-ink: #121a4a;
+  --et-muted: #4f5885;
+  --et-line: #dde3f7;
+
+  --et-font-display: "Poppins", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --et-font-body: "Nunito Sans", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+  --et-shadow-md: 0 12px 32px -14px rgba(20, 31, 90, 0.28);
+  --et-shadow-lg: 0 28px 64px -24px rgba(20, 31, 90, 0.4);
+  --et-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--et-font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--et-ink);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body.et-no-scroll {
+  overflow: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 3px solid var(--et-blue-600);
+  outline-offset: 3px;
+}
+.et-on-dark :focus-visible {
+  outline-color: #fff;
+}
+
+.et-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Estructura ---------- */
+.et-container {
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.et-section {
+  position: relative;
+  padding-top: clamp(64px, 9vw, 112px);
+  padding-bottom: clamp(64px, 9vw, 112px);
+  background: #fff;
+}
+.et-section--tint {
+  background: var(--et-blue-50);
+}
+.et-section--dark {
+  background: var(--et-navy-800);
+  color: #fff;
+}
+
+/* ---------- Tipografía ---------- */
+.et-title {
+  margin: 0 0 16px;
+  font-family: var(--et-font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--et-navy-800);
+}
+.et-section--dark .et-title {
+  color: #fff;
+}
+
+.et-lead {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 1.08rem;
+  color: var(--et-muted);
+}
+.et-section--dark .et-lead {
+  color: var(--et-blue-200);
+}
+
+.et-head {
+  max-width: 720px;
+  margin: 0 auto clamp(36px, 5vw, 60px);
+  text-align: center;
+}
+.et-head .et-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Botones ---------- */
+.et-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 26px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--et-font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease,
+    transform 0.25s ease, box-shadow 0.25s ease;
+}
+.et-btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.et-btn:active {
+  transform: translateY(0);
+}
+.et-btn--sm {
+  min-height: 42px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+}
+.et-btn--block {
+  width: 100%;
+}
+.et-btn--coral {
+  background: var(--et-coral-600);
+  border-color: var(--et-coral-600);
+  color: #fff;
+  box-shadow: 0 12px 24px -12px rgba(217, 61, 40, 0.75);
+}
+.et-btn--coral:hover {
+  background: var(--et-coral-700);
+  border-color: var(--et-coral-700);
+  color: #fff;
+}
+.et-btn--ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.et-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+.et-btn--outline {
+  color: var(--et-navy-800);
+  border-color: var(--et-navy-800);
+}
+.et-btn--outline:hover {
+  background: var(--et-navy-800);
+  color: #fff;
+}
+
+/* ---------- Lista con check de marca ---------- */
+.et-checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.et-checks li {
+  position: relative;
+  padding-left: 34px;
+  line-height: 1.55;
+}
+.et-checks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  width: 22px;
+  height: 22px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23E3E9FE'/%3E%3Cpath d='M7 12.4l3.1 3.1L17 8.8' fill='none' stroke='%23D93D28' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+}
+.et-checks--dark li::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23ffffff' fill-opacity='.14'/%3E%3Cpath d='M7 12.4l3.1 3.1L17 8.8' fill='none' stroke='%23FF7A66' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ---------- Aparición al hacer scroll (ver directives/reveal.js) ---------- */
+.et-reveal {
+  opacity: 0;
+}
+.et-reveal.is-in {
+  opacity: 1;
+  animation: et-rise 0.7s var(--et-ease) backwards;
+}
+@keyframes et-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Accesibilidad: respetar "reducir movimiento" ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
