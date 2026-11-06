@@ -61,7 +61,7 @@ const youtubeVideoUrl =
         <div class="svc__video" v-reveal="140">
           <div class="video">
             <iframe
-              :src="https://www.youtube.com/watch?v=sHv8MFSff_c"
+              src="https://www.youtube-nocookie.com/embed/sHv8MFSff_c?rel=0"
               title="Video de presentación de EduTek"
               loading="lazy"
               frameborder="0"
