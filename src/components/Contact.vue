@@ -7,10 +7,11 @@ const subHeading = "La educación es la clave del futuro. Escríbenos y converse
 
 const contactInfo = {
   address: "Lima, Perú",
-  phone: "953 975 396",
+  phone: "953 975 396 / 945 671 217",
   phoneHref: "tel:+51953975396",
-  email: "edutek.comunicaciones@gmail.com",
+  email: "edutek.startup2.0@gmail.com",
   instagram: "https://www.instagram.com/edutk_/",
+  linkedin: "https://www.linkedin.com/company/edutk/",
 };
 </script>
 
@@ -61,7 +62,6 @@ const contactInfo = {
           </ul>
 
           <div class="contact__actions">
-            <a :href="'mailto:' + contactInfo.email" class="et-btn et-btn--coral">Escribir por correo</a>
             <a :href="contactInfo.instagram" target="_blank" rel="noopener noreferrer" class="et-btn et-btn--ghost">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
@@ -69,6 +69,14 @@ const contactInfo = {
                 <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
               </svg>
               Instagram
+            </a>
+            <a :href="contactInfo.linkedin" target="_blank" rel="noopener noreferrer" class="et-btn et-btn--ghost">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
             </a>
           </div>
         </div>
