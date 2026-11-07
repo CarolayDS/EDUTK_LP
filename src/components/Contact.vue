@@ -10,7 +10,7 @@ const contactInfo = {
   phone: "953 975 396 / 945 671 217",
   phoneHref: "tel:+51953975396",
   email: "edutek.startup2.0@gmail.com",
-  instagram: "https://www.instagram.com/edutk_/",
+  instagram: "https://www.instagram.com/edutek.ia/",
   linkedin: "https://www.linkedin.com/company/edutk/",
 };
 </script>
